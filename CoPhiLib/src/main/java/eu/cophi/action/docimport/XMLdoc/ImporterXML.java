@@ -11,10 +11,12 @@ import eu.cophi.action.docimport.DocImporter;
  */
 public class ImporterXML extends DocImporter {
 
+	String features;
+	
 	/**
 	 * 
 	 */
-	public ImporterXML() {
+	public ImporterXML(String features) {
 		// TODO Auto-generated constructor stub
 	}
 

@@ -16,7 +16,7 @@ public abstract class DocImporter {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
+	abstract 
 
 	/**
 	 * @param args
