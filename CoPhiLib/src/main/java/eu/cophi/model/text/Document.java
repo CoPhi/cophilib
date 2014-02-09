@@ -3,11 +3,13 @@
  */
 package eu.cophi.model.text;
 
+import java.io.ObjectInputStream.GetField;
+
 /**
  * @author Angelo Del Grosso
  *
  */
-public class Document {
+abstract public class Document {
 	String content;
 
 	/**
@@ -21,6 +23,11 @@ public class Document {
 	/**
 	 * @param args
 	 */
+	
+	public String getContent(){
+		return content;
+	}
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 

@@ -1,22 +1,21 @@
 /**
  * 
  */
-package eu.cophi.action.docimport.XMLdoc;
+package eu.cophi.model.text.raw;
 
-import eu.cophi.action.docimport.DocImporter;
+import eu.cophi.model.text.Document;
 
 /**
  * @author Angelo Del Grosso
  *
  */
-public class ImporterXML extends DocImporter {
+public class RAWdocument extends Document {
 
-	String features;
-	
 	/**
-	 * 
+	 * @param content
 	 */
-	public ImporterXML(String features) {
+	public RAWdocument(String content) {
+		super(content);
 		// TODO Auto-generated constructor stub
 	}
 

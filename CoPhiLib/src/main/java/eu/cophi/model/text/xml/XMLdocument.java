@@ -1,26 +1,29 @@
 /**
  * 
  */
-package eu.cophi.action.docimport;
+package eu.cophi.model.text.xml;
+
+import eu.cophi.model.text.Document;
 
 /**
  * @author Angelo Del Grosso
  *
  */
-public abstract class DocImporter {
+public class XMLdocument extends Document {
 
 	/**
-	 * 
+	 * @param content
 	 */
-	public DocImporter() {
+	public XMLdocument(String content) {
+		super(content);
 		// TODO Auto-generated constructor stub
 	}
-	
-	abstract 
 
 	/**
 	 * @param args
 	 */
+	
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
