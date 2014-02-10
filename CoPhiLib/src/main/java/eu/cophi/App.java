@@ -19,7 +19,7 @@ public class App
     {
         
         //Document junkDocument = AbstractBuilderFactory.buildDocument(StructureType.XML, Features.WEB, new StringReader("file xml"));
-        Document junkDocument = AbstractBuilderFactory.buildDocument(StructureType.TEXT, Features.OCR, new StringReader("file di testo.."));
+        Document junkDocument = AbstractBuilderFactory.buildDocument(StructureType.XML, Features.XSLT, new StringReader("file di testo.."));
         System.out.println(junkDocument.getContent());
         
     }

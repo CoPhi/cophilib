@@ -9,6 +9,10 @@ import java.nio.CharBuffer;
 
 import eu.cophi.action.docbuilder.DocBuilder;
 import eu.cophi.action.docbuilder.Features;
+import eu.cophi.action.docbuilder.XMLdoc.strategy.DefaultXMLcontentBehavior;
+import eu.cophi.action.docbuilder.XMLdoc.strategy.XMLcontentBehavior;
+import eu.cophi.action.docbuilder.XMLdoc.strategy.XMLcontextContent;
+import eu.cophi.action.docbuilder.XMLdoc.strategy.XSLTcontentBehavior;
 import eu.cophi.model.text.Document;
 import eu.cophi.model.text.xml.XMLdocument;
 
@@ -38,14 +42,16 @@ public class BuilderXML extends DocBuilder {
 	@Override
 	 public Document build(Reader reader) {
 		// TODO Auto-generated method stub
-		CharBuffer target = CharBuffer.allocate(1024);
-		try {
-			reader.read(target);
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		XMLcontentBehavior behavior;
+		if(getType().equals("XSLT")){
+			behavior = new XSLTcontentBehavior();
 		}
-		return new XMLdocument("<body>" + target.flip().toString() + " -- " + "<features>"+this.getType()+"</features>" + "</body>");
+		else{
+		 behavior = new DefaultXMLcontentBehavior();
+		 }
+		
+		XMLcontextContent context = new XMLcontextContent(behavior);
+		return  context.build(reader);
 	}
 
 }
